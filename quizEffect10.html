@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트 주관식</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <link rel="stylesheet" href="assets/css/ani.css">
+</head>
+
+<body class="fixed">
+    <header id="header">
+        <h1>
+            <a href="../javascript12.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <li class="active"><a href="quizEffect10.html">10</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //header -->
+
+    <footer id="footer">
+        <a href="hee031812@gmail.com">hee031812@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        // 문제 정보
+        let quizInfo = [];
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz();
+        });
+
+        // 문제 가져오기
+        const fetchQuiz = () => {
+            fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json")
+                .then(res => res.json())
+                .then(items => {
+                    quizInfo = items.map((item, index) => {
+                        const formattedQuiz = {
+                            infoDate: "정보처리 " + item.time,
+                            infoQuestion: item.question,
+                            infoDesc: item.question_desc,
+                            infoAnswer: item.correct_answer
+                        }
+                        return formattedQuiz;
+                    });
+                    updataQuiz(currentIndex);
+                })
+        }
+        fetchQuiz();
+
+        let currentIndex = 0;
+
+        const updataQuiz = (index) => {
+            if (quizInfo.length > 0 && index < quizInfo.length) {
+                const formattedQuiz = quizInfo[index];
+                let quizWrapTag = `
+                    <div class="quiz set">
+                        <div class="quiz__header">
+                            <span class="quiz__date">${formattedQuiz.infoDate}</span>
+                        </div>
+                        <div class="quiz__main">
+                            <div class="quiz__question">
+                                <span>${formattedQuiz.infoQuestion}</span>
+                            </div>
+                            <div class="quiz__desc">${formattedQuiz.infoDesc}</div>
+                            <div class="quiz__answer none">${formattedQuiz.infoAnswer}</div>
+                        </div>
+                        <div class="quiz__footer">
+                            <button class="quiz__confirm">정답 확인하기</button>
+                            <button class="quiz__next none">다음 문제</button>
+                        </div>
+                    </div>
+                `;
+
+                quizWrap.innerHTML = quizWrapTag;
+
+                function hiddenAdd() {
+                    const quizDesc = document.querySelector(".quiz__desc");
+
+                    if (formattedQuiz.infoDesc !== null && formattedQuiz.infoDesc !== "") {
+
+                        quizDesc.textContent = formattedQuiz.infoDesc;
+                    } else {
+
+                        quizAdd.classList.add("none");
+                    }
+                }
+                hiddenAdd();
+
+                // 선택자
+                const quizAnswer = quizWrap.querySelector(".quiz__answer");
+                const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+                const quizNext = quizWrap.querySelector(".quiz__next");
+
+                // 정답 확인 버튼
+                quizConfirm.addEventListener("click", () => {
+                    quizAnswer.classList.remove("none");
+                    quizConfirm.classList.add("none");
+                    quizNext.classList.remove("none");
+                });
+
+                // 다음 문제 버튼
+                quizNext.addEventListener("click", () => {
+                    if (currentIndex < quizInfo.length - 1) {
+                        quizAnswer.classList.add("none");
+                        quizNext.classList.add("none");
+                        quizConfirm.classList.remove("none");
+                        currentIndex++;
+                        updataQuiz(currentIndex);
+                    } else {
+                        updataQuiz(0);
+                    }
+                });
+            }
+        };
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updataQuiz(currentIndex);
+            hiddenAdd();
+        });
+    </script>
+
+</body>
+
+</html>

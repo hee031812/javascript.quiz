@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 에펙트 05</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="../assets/css/default.min.css">
+
+</head>
+
+<body class="fiexd">
+    <header id="header">
+        <h1>
+            <a href="../javascript12.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffect10.html">10</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스보기</div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="true"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="orange"></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>JAVASCRIPT</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="orange"></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>HTML</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="true">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path
+                                            d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="orange"></path>
+                                        <path
+                                            d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z"
+                                            fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont">
+                        <div class="active">javascript
+                            <pre><code class="language-js">{
+    const greeting = '   Hello world!   ';
+
+    console.log(greeting);
+    // Expected output: "   Hello world!   ";
+
+    console.log(greeting.trim());
+    // Expected output: "Hello world!";
+}</code></pre>
+                        </div>
+                        <div>jquery
+                            <pre><code class="language-js">$(function(){
+    let currentIndex = 0;   // 현재 이미지
+
+    setInterval(function(){             //3초에 한번씩 실행.
+        let nextIndex = (currentIndex +1) % 5;
+
+        $(".slider").eq(currentIndex).fadeOut(1200);        // 첫번째 이미지 나타남
+        $(".slider").eq(nextIndex).fadeIn(1200);            // 두번째 이미지 나타남
+
+        currentIndex = nextIndex;
+
+    }, 3000);
+});</code></pre>
+                        </div>
+                        <div>css</div>
+                    </div>
+                </div>
+                <div class="modal__close">
+                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <a href="mailto:hee031812@gmail.com">hee031812@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="js/common.js"></script>
+
+    </script>
+    <script>
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+
+        // 문제정보
+
+        const quizInfo = [
+            {
+                infoDate: "2016년 4회",
+                infoType: "웹디자인기능사",
+                infoQuestion: "2진수 1011을 그레이코드로 변환하면?",
+                infoChoice: ["1010", "0100", "0111", "1110"],
+                infoAnswer: "2",
+                infoDesc: "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다. ",
+            },
+            {
+                infoDate: "2010년 제2회",
+                infoType: "웹디자인기능사",
+                infoQuestion: "연속되는 2개의 숫자를 표현한 코드에서 한 개의 비트를 변경하면 새로운 코드가 되기 때문에 아날로그-디지털 변환, 데이터 전송 등에 주로 사용되는 코드는?",
+                infoChoice: ["EBCDIC Code", "Hamming Code", "ASCII Code", "Gray Code",],
+                infoAnswer: "4",
+                infoDesc: "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다. ",
+            },
+            {
+                infoDate: "2010년 제2회",
+                infoType: "웹디자인기능사",
+                infoQuestion: "1비트(bit)를 기억할 수 있는 능력을 가진 기억의 최소 단위로 클록이 있는 순서회로에 기억된 기억 소자는??",
+                infoChoice: ["플립플롭(Flip-Flop)", "전가산기(Full Adder)", "반가산기(Half Adder)", "부호기(Encoder)"],
+                infoAnswer: "1",
+                infoDesc: "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다. ",
+            },
+        ];
+        let currentIndex = 0;               //현재 문제 변수 값
+
+        // 문제 출력
+        const updataQuiz = (index) => {
+            let quizWrapTag = `
+                <div class="quiz">
+                    <div class="quiz__header">${quizInfo[index].infoDate} ${quizInfo[index].infoType}</div>
+                    <div class="quiz__main">
+                        <div class="quiz__question">
+                            ${index + 1}.${quizInfo[index].infoQuestion}
+                        </div>
+                        <div class="quiz__choice">
+                            <label for="choice1">
+                                <input type="radio" id="choice1" name="choice" value="1">
+                                <span>${quizInfo[index].infoChoice[0]}</span>
+                            </label>
+
+                        </div>
+                        <div class="quiz__answer none">${quizInfo[index].infoAnswer}</div>
+                        <div class="quiz__desc none">${quizInfo[index].infoDesc}</div>
+
+                    </div>
+                    <div class="quiz__footer">
+                        <button class="quiz__confirm ">정답확인하기</button>
+                        <button class="quiz__next none">다음 문제</button>
+                    </div>
+                </div>`
+            quizWrap.innerHTML = quizWrapTag;
+
+            // 선택자
+            const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+            const quizNext = quizWrap.querySelector(".quiz__next");
+
+            // 정답확인버튼
+            quizConfirm.addEventListener("click", () => {
+                checkAnswer();
+                quizConfirm.classList.add("none");      //정답 버튼 삭제
+                quizNext.classList.remove("none");      //다음 버튼 추가
+            });
+
+            // 다음문제 버튼
+            quizNext.addEventListener("click", () => {
+                if (currentIndex < quizInfo.length - 1) {
+                    quizNext.classList.add("none");            //다음 버튼 삭제
+                    quizConfirm.classList.remove("none");      //정답 버튼 삭제
+                    currentIndex++;                            // 문제 번호 추가
+                    updataQuiz(currentIndex);                  // 퀴즈반영
+                } else {
+                    alert("퀴즈가 종료되었습니다.");
+                }
+            })
+
+        }
+        //정답 확인
+        const checkAnswer = () => {
+            const selectedChoice = quizWrap.querySelectorAll("input[name='choice']:checked");
+            const correctAnswer = quizInfo[currentIndex].infoAnswer;    //정답지의 정답
+            const quizElement = quizWrap.querySelector(".quiz");
+            const descElement = quizWrap.querySelector(".quiz__desc");
+            const answerElement = quizWrap.querySelector(".quiz__answer");
+
+            if (selectedChoice.length > 0) {
+                const userAnswer = selectedChoice[0].value;                // 사용자가 체크한 정답
+
+                if (userAnswer === correctAnswer) {
+                    quizElement.classList.add("good");
+
+                } else {
+                    quizElement.classList.add("bad");
+                    answerElement.classList.remove("none");
+                }
+
+                descElement.classList.remove("none");
+            } else {
+                alert("정답을 선택해주세요.");
+            }
+
+
+
+        };
+
+        //페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updataQuiz(currentIndex);
+        })
+
+    </script>
+</body>
+
+</html>
